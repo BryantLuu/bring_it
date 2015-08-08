@@ -1,0 +1,59 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+       $('.datepicker').pickadate({
+          selectMonths: true, // Creates a dropdown to control month
+          selectYears: 15, // Creates a dropdown of 15 years to control year
+        });
+    })
+</script>
+
+<div ng-controller="eventsController">
+    <br><br><br>
+    <div class="row">
+    <form>
+      <div class="col s4">
+        <input id="eventName" type="text" ng-model="event.title" name="title">
+        <label for="title">Event Title</label>
+      </div>
+      <div class="col s8">
+        <input type="text" ng-model="event.description">
+        <label for="description">Description</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s4">
+        <input type="date" class="datepicker" ng-model="event.date" name="date">
+        <label for="date">Date</label>
+      </div>
+      <div class="col s4">
+        <input type="time" ng-model="event.time">
+        <label>Time</label>
+      </div>
+    </div>
+    <h5>Items:</h5>
+    <label>Items</label>
+    <div>
+      <ul>
+        <li ng-repeat="item in event.items">{{item.quantity}} {{item.name}} <a href="" ng-click="removeItem(event.items.indexOf(item))"><i class="red-text text-lighten-2 fa fa-times"></i></a></li>
+      </ul>
+      <ul>
+        <div class="row">
+          <div class="col s2">
+            <label for="quantity" class="edit_quantity_label">Quantity</label>
+            <input type="number" value="1" ng-model="newItem.quantity" name="quantity" class="edit_quantity">
+          </div>
+          <div class="col s6">
+            <label for="itemName"></label>
+            <input type="text" placeholder="Item name" ng-model="newItem.name" name="itemName">
+          </div>
+          <div class="col s2">
+            <!-- <input type="submit" value="Add Another Item" ng-click="addItem2(id)"> -->
+            <a ng-click="addItem2(id)" class="btn-floating btn-large waves-effect waves-light light-blue accent-1 "><i class="material-icons">add</i></a>
+          </div>
+        </div>
+      </ul>
+    </div>
+    <a href="#/{{id}}/show" ng-click="updateEvent()" class="waves-effect waves-light btn orange lighten-3">Update Event</a>
+  </form>
+  <a href="#/{{id}}/show"><button class="waves-effect waves-light btn orange lighten-3">Go Back</button></a>
+</div>
