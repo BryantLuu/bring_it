@@ -7,6 +7,9 @@ myApp.config(function($routeProvider){
     .when('/events/new', {
       templateUrl: './../partials/new.html'
     })
+    .when('/events/demo', {
+      templateUrl: './../partials/demo.html'
+    })
     .when('/events/:id', {
       templateUrl: './../partials/show.html'
     })
