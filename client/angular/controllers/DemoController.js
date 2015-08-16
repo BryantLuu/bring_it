@@ -63,7 +63,7 @@ myApp.controller('DemoController', function($scope, eventFactory, $routeParams, 
               "truth" : false,
               "claims" : [
                             {
-                              "name" : "Eevonn",
+                              "name" : "Hung",
                               "quantity" : 1,
                               "description" : "Corn on the cob" 
                             },
