@@ -51,7 +51,7 @@ myApp.controller('DemoController', function($scope, eventFactory, $routeParams, 
                               "description" : "Salmon and Tuna Sashimi" 
                             },
                             {
-                              "name" : "Eevonn",
+                              "name" : "Eric",
                               "quantity" : 1,
                               "description" : "Honey ham!"
                             }
