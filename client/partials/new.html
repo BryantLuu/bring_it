@@ -8,9 +8,10 @@
 </script>
 
 <div ng-controller="NewController">
-  <form name="eventForm">
+  
     <br><br><br>
     <div class="row">
+    <form name="eventForm">
       <div class="input-field col s4">
         <input name="title" type="text" ng-model="newEvent.host" required>
         <label for="title">Host</label>
@@ -56,14 +57,10 @@
                        <a ng-click="addItem()" class="btn-floating btn-large waves-effect waves-light light-blue accent-1"><i class="material-icons">add</i></a>
               </div>
             
-          </div> <!-- end row -->
-          <!-- <input type="submit" value="Add Another Item" ng-click="addItem()"> -->
+          </div>
         </ul>
     </div>
-    <div class="row">
           <a href="#/"><input type="submit" value="Save" ng-click="addEvent(items)" ng-disabled="eventForm.$invalid" class="waves-effect waves-light btn orange lighten-3"></a>
   </form>
   <a href="#/"><button class="waves-effect waves-light btn orange lighten-3">Go Back</button></a>
-    </div>
-
 </div>

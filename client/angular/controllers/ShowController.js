@@ -1,6 +1,7 @@
 myApp.controller('ShowController', function($scope, eventFactory, $routeParams, $timeout){
   $scope.event = {};
   $scope.itemClaim = {};
+  $scope.id = $routeParams.id;
   updateEvent();
   
 

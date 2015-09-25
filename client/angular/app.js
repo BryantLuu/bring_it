@@ -10,11 +10,11 @@ myApp.config(function($routeProvider){
     .when('/events/demo', {
       templateUrl: './../partials/demo.html'
     })
-    .when('/events/:id', {
-      templateUrl: './../partials/show.html'
-    })
     .when('/events/:id/edit', {
       templateUrl: './../partials/edit.html'
+    })
+    .when('/events/:id', {
+      templateUrl: './../partials/show.html'
     })
     .otherwise({
       redirectTo: '/'
