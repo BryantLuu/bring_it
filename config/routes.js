@@ -5,13 +5,13 @@ module.exports = function(app){
     res.render('index');
   })
 
-  app.get('/event/:id', function(req,res){
+  app.get('/events', function(req,res){
     events.show(req,res);
   })
 
-  // app.get('/getEvent', function(req,res){
-  //   events.showOne(req,res);
-  // })
+  app.get('/events/:id', function(req,res){
+    events.showOne(req,res);
+  })
 
   app.post('/addEvent', function(req,res){
     events.add(req,res);

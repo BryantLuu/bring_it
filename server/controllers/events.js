@@ -2,7 +2,17 @@ var mongoose = require('mongoose');
 var Event = mongoose.model('Event');
 
 module.exports = {
-  show: function(req, res){
+  show: function(req,res){
+    Event.find({}, function(err, result){
+      if(err){
+        console.log(err);
+      } else {
+        res.json(result);
+      }
+    })
+  },
+
+  showOne: function(req, res){
     Event.findOne({_id: req.params.id}, function(err,result){
       if(err){
         console.log(err);

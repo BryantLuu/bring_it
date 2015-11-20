@@ -6,14 +6,59 @@
   </div>
   <div class="row">
     <div class="col s8">
-      <h4 class="list_header">
-        <p>1. Schedule an event.</p>
-        <p>2. Create A list of what you need.</p>
-        <p>3. Link the event to guests.</p>
-        <p>4. Have them bring it!</p>
-        <p> Click <a href="#/events/demo" class="btn-floating btn-large waves-effect waves-light light-blue accent-1"><i class="material-icons">wallpaper</i></a> to view a sample.</p>
-        <p> Click <a href="#/events/new" class="btn-floating btn-large waves-effect waves-light light-blue accent-1"><i class="material-icons">add</i></a> to create your own event!</p> 
-      </h4>
+      <h4 class="list_header">Recent Events</h4>
     </div>
+    <div class="col s2 button_position">
+      <!-- <a href="#/new"><h4>Create New Event (+)</h4></a> -->
+       <a href="#/events/new" class="btn-floating btn-large waves-effect waves-light light-blue accent-1 right"><i class="material-icons">add</i></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <a href="#/events/demo">
+          <div class="col s10">
+            <div class="card teal lighten-2">
+              <div class="card-content white-text">
+                <span class="card-title white-text">Thanksgiving with Friends (Sample Event)</span>
+                <span class=" white-text right">11/26/2015<br>06:00 PM</span>
+                <!-- <span class=" black-text right">{{event.time | date:'hh:mm a'}}</span> -->
+                  <p>{{event.description}}</p>
+                  <p>Owner: Bryant</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>    
+      <div ng-repeat="event in events | orderBy: 'date' | limitTo: paginationLimit()">
+
+          <div class="row">
+            <a href="#/events/{{event._id}}">
+            <div class="col s10">
+              <div class="card grey lighten-3">
+                <div class="card-content black-text">
+                  <span class="card-title black-text">{{event.title}}</span>
+                  <span class=" black-text right">{{event.date | date:'MM/dd/yyyy'}}<br>{{event.time | date:'hh:mm a'}}</span>
+                  <!-- <span class=" black-text right">{{event.time | date:'hh:mm a'}}</span> -->
+                    <p>{{event.description}}</p>
+                    <p>Owner: {{event.host}}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          </div>
+      </div>
+      <a href="" ng-show="hasMoreToShow()" ng-click="showMore()"><p>Show more...</p></a>
+    </div>
+    <!-- <div class="col s8">
+      <div class="list_header">
+        <h4>1. Schedule an event.</h4>
+        <h4>2. Create A list of what you need.</h4>
+        <h4>3. Link the event to guests.</h4>
+        <h4>4. Have them bring it!</h4>
+        <h4> Click <a href="#/events/demo" class="btn-floating btn-large waves-effect waves-light light-blue accent-1"><i class="material-icons">wallpaper</i></a> to view a sample.</h4>
+        <h4> Click <a href="#/events/new" class="btn-floating btn-large waves-effect waves-light light-blue accent-1"><i class="material-icons">add</i></a> to create your own event!</h4> 
+      </div>
+    </div> -->
   </div>
 </div>

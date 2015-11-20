@@ -2,8 +2,15 @@ myApp.factory('eventFactory', function($http){
   var events = [];
   var factory = {};
 
+  factory.getEvents = function(callback){
+    $http.get('/events').success(function(output){
+      events = output;
+      callback(events);
+    })
+  }
+
   factory.getEvent = function(id, callback){
-    $http.get('/event/'+id).success(function(output){
+    $http.get('/events/'+id).success(function(output){
       events = output;
       callback(events);
     })
