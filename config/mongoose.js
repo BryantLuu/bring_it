@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var fs = require('fs');
 
 var uristring =
-process.env.MONGOLAB_URI ||
+process.env.MONGODB_URI ||
 process.env.MONGOHQ_URL ||
 'mongodb://localhost/bring_it';
 
