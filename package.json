@@ -1,6 +1,7 @@
 {
   "name": "bring_itV2",
   "version": "0.0.1",
+  "nodeVersion": "6.2.1",
   "dependencies": {
     "body-parser": "^1.13.1",
     "ejs": "^2.3.3",
